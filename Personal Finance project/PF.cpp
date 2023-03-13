@@ -78,7 +78,8 @@ void MyBank::Card(int N) {
         cout << "yspewno" << endl;
         break;
     case '3':
-        Exit();
+        cout << "bye";
+        exit(0);
         break;
     default:
         while (true)
@@ -207,13 +208,18 @@ void MyBank::Show() {
         cout << "Pin code -> " << PCode[i] << endl;
         cout << "Balance -> " << BALANCE[i] << endl << endl;
     }
-}
-void MyBank::SaveToFile() {
-    ofstream out;          // поток для записи
-    out.open("E:\\Test\\test.txt"); // окрываем файл для записи
-    if (out.is_open()) {
-        for (int i = 0; i <= N; i++) {
-            if(CateTop[i].empty())
+}                                                                                        
+void MyBank::SaveToFile() {                                                                                                               
+    //нужно чтобы обязательно файл по этому пути был                                                                                             
+    //иначе никуда не сохраниться                                                                                                               
+    //так сделано не потому что я ленивый                                                                                                    
+    //а потому что это не мне нужно сохранять куда то                                                                                
+    //а клиенту :)                                                                                                                          
+    ofstream out;// поток для записи                                                                                                          
+    out.open("E:\\Test\\test.txt"); // окрываем файл для записи                                                                              
+    if (out.is_open()) {                                                                                                                  
+        for (int i = 0; i <= N; i++) {                                                                                                   
+            if(CateTop[i].empty())                                                                                                        
             out << "Name -> " << Name[i] << endl;
             out << "Number Phone -> " << Number[i] << endl;
             out << "Birth Day -> " << BDay[i] << endl;
@@ -223,8 +229,8 @@ void MyBank::SaveToFile() {
             if (CateTop[i].empty())cout << "net categorii" << endl;
             else out << "Top category -> " << CateTop[i] << endl;
             if (MaxBuy.empty())MaxBuy[i] = 0;
-            else out << "Top buy -> " << MaxBuy[i] << endl << endl;;
-        }
+            else out << "Top buy -> " << MaxBuy[i] << endl << endl;
+        }out << "Подписывайтесь на инстаграм*(запрещенная в рф соцсеть) dweavp!!!";
     }
     out.close();
 }
