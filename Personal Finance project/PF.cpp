@@ -17,8 +17,10 @@ void MyBank::RegistrMenu() {
         exit(0);
         break;
     default:
-        while (true)
-            cout << "!!!!daun:)!!!!" << endl;
+        while (true){
+            cout << "!!!!esli u ne smogli vvesti true cifru u ne mojete play!!!!" << endl;
+            exit(0);
+        }
     }
     Card(N);
 }
@@ -37,7 +39,7 @@ void MyBank::Registrate() {
         cout << "Come up with a pin code:" << endl; cin >> PinCode;
     } while (PinCode.length() != 4);
 
-    //для отслеживания всех карт
+    //Г¤Г«Гї Г®ГІГ±Г«ГҐГ¦ГЁГўГ Г­ГЁГї ГўГ±ГҐГµ ГЄГ Г°ГІ
     Name.push_back(FullName);
     Number.push_back(PhoneNumber);
     BDay.push_back(BirthDay);
@@ -150,8 +152,8 @@ void MyBank::Trata(int N) {
     }
     else {
         BALANCE[N] -= tempBalance;
-        char* temp = new char;//для ввода новой категории
-        int cat;//для выбора к какой категории отнести
+        char* temp = new char;//Г¤Г«Гї ГўГўГ®Г¤Г  Г­Г®ГўГ®Г© ГЄГ ГІГҐГЈГ®Г°ГЁГЁ
+        int cat;//Г¤Г«Гї ГўГ»ГЎГ®Г°Г  ГЄ ГЄГ ГЄГ®Г© ГЄГ ГІГҐГЈГ®Г°ГЁГЁ Г®ГІГ­ГҐГ±ГІГЁ
         if (Category.empty() == true) {
             system("cls");
             cout << "K kakoy category u otnesete this traty?(write what you to add)" << endl;
@@ -186,7 +188,7 @@ void MyBank::TopTrat() {
 void MyBank::TopCategory() {
     cout << "~~~TOP~CATEGORY~~~" << endl;
     int max=0;
-    //почему то не работает((
+    //ГЇГ®Г·ГҐГ¬Гі ГІГ® Г­ГҐ Г°Г ГЎГ®ГІГ ГҐГІ((
     //int maxBuyCateg = *max_element(KolBuyCat.begin(), KolBuyCat.end());
     for (int i = 0; i < nCategory; i++)
         if (KolBuyCat[i] > max)max = KolBuyCat[i];
@@ -210,13 +212,13 @@ void MyBank::Show() {
     }
 }                                                                                        
 void MyBank::SaveToFile() {                                                                                                               
-    //нужно чтобы обязательно файл по этому пути был                                                                                             
-    //иначе никуда не сохраниться                                                                                                               
-    //так сделано не потому что я ленивый                                                                                                    
-    //а потому что это не мне нужно сохранять куда то                                                                                
-    //а клиенту :)                                                                                                                          
-    ofstream out;// поток для записи                                                                                                          
-    out.open("E:\\Test\\test.txt"); // окрываем файл для записи                                                                              
+    //Г­ГіГ¦Г­Г® Г·ГІГ®ГЎГ» Г®ГЎГїГ§Г ГІГҐГ«ГјГ­Г® ГґГ Г©Г« ГЇГ® ГЅГІГ®Г¬Гі ГЇГіГІГЁ ГЎГ»Г«                                                                                             
+    //ГЁГ­Г Г·ГҐ Г­ГЁГЄГіГ¤Г  Г­ГҐ Г±Г®ГµГ°Г Г­ГЁГІГјГ±Гї                                                                                                               
+    //ГІГ ГЄ Г±Г¤ГҐГ«Г Г­Г® Г­ГҐ ГЇГ®ГІГ®Г¬Гі Г·ГІГ® Гї Г«ГҐГ­ГЁГўГ»Г©                                                                                                    
+    //Г  ГЇГ®ГІГ®Г¬Гі Г·ГІГ® ГЅГІГ® Г­ГҐ Г¬Г­ГҐ Г­ГіГ¦Г­Г® Г±Г®ГµГ°Г Г­ГїГІГј ГЄГіГ¤Г  ГІГ®                                                                                
+    //Г  ГЄГ«ГЁГҐГ­ГІГі :)                                                                                                                          
+    ofstream out;// ГЇГ®ГІГ®ГЄ Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ                                                                                                          
+    out.open("E:\\Test\\test.txt"); // Г®ГЄГ°Г»ГўГ ГҐГ¬ ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ                                                                              
     if (out.is_open()) {                                                                                                                  
         for (int i = 0; i <= N; i++) {                                                                                                   
             if(CateTop[i].empty())                                                                                                        
@@ -230,7 +232,7 @@ void MyBank::SaveToFile() {
             else out << "Top category -> " << CateTop[i] << endl;
             if (MaxBuy.empty())MaxBuy[i] = 0;
             else out << "Top buy -> " << MaxBuy[i] << endl << endl;
-        }out << "Подписывайтесь на инстаграм*(запрещенная в рф соцсеть) dweavp!!!";
+        }out << "ГЏГ®Г¤ГЇГЁГ±Г»ГўГ Г©ГІГҐГ±Гј Г­Г  ГЁГ­Г±ГІГ ГЈГ°Г Г¬*(Г§Г ГЇГ°ГҐГ№ГҐГ­Г­Г Гї Гў Г°Гґ Г±Г®Г¶Г±ГҐГІГј) dweavp!!!";
     }
     out.close();
 }
